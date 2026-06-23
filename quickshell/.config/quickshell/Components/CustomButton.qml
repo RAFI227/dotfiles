@@ -6,12 +6,15 @@ Rectangle {
 
     default property alias content: container.data
     color: mouseArea.containsMouse ? Colors.surface_bright : "transparent"
-    implicitWidth: container.childrenRect.width
-    implicitHeight: container.childrenRect.height
+    implicitWidth: container.childrenRect.width + Style.contentMargin
+    implicitHeight: container.childrenRect.height + Style.contentMargin
+    radius: Style.borderRadius
     signal clicked(var mouse)
 
     Item {
         id: container
+        anchors.fill: parent
+        anchors.centerIn: parent
     }
 
     MouseArea {

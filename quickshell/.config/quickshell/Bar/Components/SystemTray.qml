@@ -1,9 +1,10 @@
 import Quickshell.Services.SystemTray
 import QtQuick
+import QtQuick.Layouts
 import qs.Style
 import qs.Components
 
-Row {
+RowLayout {
     property alias length: trayModel.count
     property var bar
     spacing: Style.spacing
@@ -14,10 +15,13 @@ Row {
 
         CustomButton {
             id: trayItem
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
             Item {
-                implicitWidth: Style.barChildrenHeight
-                implicitHeight: Style.barChildrenHeight
+                anchors.centerIn: parent
+                implicitWidth: Style.contentSize + 5
+                implicitHeight: Style.contentSize
 
                 Image {
                     anchors.fill: parent

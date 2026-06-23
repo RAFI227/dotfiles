@@ -18,19 +18,22 @@ PanelWindow {
         anchors.margins: Style.barMargin
         anchors.fill: parent
 
-        ContainerRectangle {
+        ChildRectangle {
+            implicitHeight: Style.childrenSize
             child: Workspaces {}
         }
 
-        ContainerRectangle {
-            child: CustomText { implicitHeight: Style.barChildrenHeight; content: "67" }
+        ChildRectangle {
+            implicitHeight: Style.childrenSize
+            child: CustomText { content: "67" }
         }
 
         Item {
             Layout.fillWidth: true
         }
 
-        ContainerRectangle {
+        ChildRectangle {
+            implicitHeight: Style.childrenSize
             Layout.alignment: Qt.AlignVCenter
             child: Clock {}
         }
@@ -39,7 +42,8 @@ PanelWindow {
             Layout.fillWidth: true
         }
 
-        ContainerRectangle {
+        ChildRectangle {
+            implicitHeight: Style.childrenSize
             visible: tray.length > 0
             child: SystemTray {
                 id: tray
@@ -47,8 +51,24 @@ PanelWindow {
             }
         }
 
-        ContainerRectangle {
+        ChildRectangle {
+            implicitHeight: Style.childrenSize
             child: Battery {}
+        }
+
+        ChildRectangle
+        {
+            implicitHeight: Style.childrenSize
+            child: CustomButton {
+                CustomText {
+                    anchors.centerIn: parent
+                    content: "󰣇"
+                }
+                // onClicked: 
+                // {
+                //
+                // }
+            }
         }
     }
 }

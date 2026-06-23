@@ -1,10 +1,8 @@
 import Quickshell.Services.UPower
 import QtQuick
 import qs.Components
-import qs.Style
 
 CustomText {
-    implicitHeight: Style.barChildrenHeight
     id: battery
     readonly property var device: UPower.displayDevice
     readonly property int percentage: Math.round(UPower.displayDevice.percentage * 100)
