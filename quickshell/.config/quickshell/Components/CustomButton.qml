@@ -14,7 +14,6 @@ Rectangle {
     Item {
         id: container
         anchors.fill: parent
-        anchors.centerIn: parent
     }
 
     MouseArea {

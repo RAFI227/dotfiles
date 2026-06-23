@@ -17,7 +17,7 @@ RowLayout {
             CustomText {
                 anchors.centerIn: parent
                 content: index + 1
-                implicitWidth: contentWidth + 5
+                implicitWidth: contentWidth
             }
 
             onClicked: Quickshell.execDetached(["niri", "msg", "action", "focus-workspace", model.idx])
