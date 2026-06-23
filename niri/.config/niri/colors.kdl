@@ -1,0 +1,24 @@
+layout {
+    border {
+        active-color   "#ffebee"
+        inactive-color "#723445"
+        urgent-color   "#ffece9"
+    }
+
+    shadow {
+        color "#00000070"
+    }
+
+    tab-indicator {
+        active-color   "#ffebee"
+        inactive-color "#723445"
+        urgent-color   "#ffece9"
+    }
+
+    insert-hint {
+        color "#ffebee80"
+    }
+}
+overview {
+    backdrop-color "#191113"
+}
