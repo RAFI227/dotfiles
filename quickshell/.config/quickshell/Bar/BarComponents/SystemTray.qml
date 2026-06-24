@@ -7,7 +7,7 @@ import qs.Components
 RowLayout {
     property alias length: trayModel.count
     property var bar
-    spacing: Style.spacing
+    spacing: Style.spacing_variant
 
     Repeater {
         id: trayModel

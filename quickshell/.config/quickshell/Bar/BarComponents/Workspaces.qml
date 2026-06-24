@@ -6,7 +6,7 @@ import qs.Status
 import qs.Style
 
 RowLayout {
-    spacing: Style.spacing
+    spacing: Style.spacing_variant
     Repeater {
         model: Niri.workspaces
 
@@ -17,7 +17,6 @@ RowLayout {
             CustomText {
                 anchors.centerIn: parent
                 content: index + 1
-                implicitWidth: contentWidth
             }
 
             onClicked: Quickshell.execDetached(["niri", "msg", "action", "focus-workspace", model.idx])

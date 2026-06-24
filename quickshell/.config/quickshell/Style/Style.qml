@@ -7,6 +7,7 @@ Singleton
 {
     property string fontFamily: "JetBrainsMono NF Medium"
     readonly property int spacing: 8
+    readonly property int spacing_variant: 2
 	readonly property int fontIconSize: 48
 	readonly property int popupFontSize: 30
     readonly property int borderSize: 2

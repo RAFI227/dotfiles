@@ -3,7 +3,7 @@ import QtQuick
 import QtQuick.Layouts
 import qs.Style
 import qs.Components
-import qs.Bar.Components
+import qs.Bar.BarComponents
 
 PanelWindow {
     id: bar
@@ -13,6 +13,7 @@ PanelWindow {
 
     implicitHeight: Style.barHeight
     color: "transparent"
+    //property var settingsPopup: SettingsPopup { window: bar }
     RowLayout {
         spacing: Style.spacing
         anchors.margins: Style.barMargin
@@ -25,7 +26,9 @@ PanelWindow {
 
         ChildRectangle {
             implicitHeight: Style.childrenSize
-            child: CustomText { content: "67" }
+            child: CustomText {
+                content: "67"
+            }
         }
 
         Item {
@@ -64,9 +67,9 @@ PanelWindow {
                     anchors.centerIn: parent
                     content: "󰣇"
                 }
-                // onClicked: 
+                // onClicked:
                 // {
-                //
+                //     startMenu.open = !startMenu.open
                 // }
             }
         }
