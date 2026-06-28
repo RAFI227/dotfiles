@@ -20,8 +20,8 @@ RowLayout {
 
             Item {
                 anchors.centerIn: parent
-                implicitWidth: Style.contentSize + 5
-                implicitHeight: Style.contentSize
+                implicitWidth: Style.barContentSize
+                implicitHeight: Style.barContentSize
 
                 Image {
                     anchors.fill: parent
@@ -35,7 +35,7 @@ RowLayout {
                 if (mouse.button === Qt.LeftButton) {
                     modelData.activate();
                 } else if (mouse.button === Qt.RightButton) {
-                    const pos = trayItem.mapToItem(null, 0, trayItem.height);
+                    const pos = trayItem.mapToItem(null, 25, trayItem.height)
                     modelData.display(bar, pos.x, pos.y);
                 }
             }

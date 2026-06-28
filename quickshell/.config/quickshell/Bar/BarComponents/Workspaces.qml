@@ -15,6 +15,7 @@ RowLayout {
             Layout.fillHeight: true
 
             CustomText {
+                fontSize: Style.barContentSize
                 anchors.centerIn: parent
                 content: index + 1
             }

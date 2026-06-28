@@ -13,21 +13,26 @@ PanelWindow {
 
     implicitHeight: Style.barHeight
     color: "transparent"
-    //property var settingsPopup: SettingsPopup { window: bar }
+    StartMenuPopup {
+        id: startMenuPopup
+        mountPoint: bar
+        leftSided: true
+    }
     RowLayout {
         spacing: Style.spacing
         anchors.margins: Style.barMargin
         anchors.fill: parent
 
         ChildRectangle {
-            implicitHeight: Style.childrenSize
-            child: Workspaces {}
+            implicitHeight: Style.barChildrenSize
+            Workspaces {}
         }
 
         ChildRectangle {
-            implicitHeight: Style.childrenSize
-            child: CustomText {
-                content: "67"
+            implicitHeight: Style.barChildrenSize
+            CustomText {
+                fontSize: Style.barContentSize
+                content: "сикс севен"
             }
         }
 
@@ -36,9 +41,9 @@ PanelWindow {
         }
 
         ChildRectangle {
-            implicitHeight: Style.childrenSize
+            implicitHeight: Style.barChildrenSize
             Layout.alignment: Qt.AlignVCenter
-            child: Clock {}
+            Clock {}
         }
 
         Item {
@@ -46,31 +51,30 @@ PanelWindow {
         }
 
         ChildRectangle {
-            implicitHeight: Style.childrenSize
+            implicitHeight: Style.barChildrenSize
             visible: tray.length > 0
-            child: SystemTray {
+            SystemTray {
                 id: tray
                 bar: bar
             }
         }
 
         ChildRectangle {
-            implicitHeight: Style.childrenSize
+            implicitHeight: Style.barChildrenSize
             child: Battery {}
         }
 
-        ChildRectangle
-        {
-            implicitHeight: Style.childrenSize
-            child: CustomButton {
+        ChildRectangle {
+            implicitHeight: Style.barChildrenSize
+            CustomButton {
                 CustomText {
+                    fontSize: Style.barContentSize
                     anchors.centerIn: parent
                     content: "󰣇"
                 }
-                // onClicked:
-                // {
-                //     startMenu.open = !startMenu.open
-                // }
+                onClicked: {
+                    startMenuPopup.open = !startMenuPopup.open;
+                }
             }
         }
     }

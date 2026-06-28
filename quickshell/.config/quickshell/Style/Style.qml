@@ -5,6 +5,7 @@ import QtQuick
 
 Singleton
 {
+    //style
     property string fontFamily: "JetBrainsMono NF Medium"
     readonly property int spacing: 8
     readonly property int spacing_variant: 2
@@ -12,13 +13,16 @@ Singleton
 	readonly property int popupFontSize: 30
     readonly property int borderSize: 2
     readonly property int borderRadius: 5
-    readonly property int barMargin: 2
-    readonly property int barHeight: 36
-    readonly property int barPadding: 2
-    readonly property int childrenPadding: 5
-    readonly property int contentMargin: 2
-    readonly property int childrenSize: barHeight - barPadding * 2
-    readonly property int contentSize: childrenSize - childrenPadding * 2 - contentMargin * 2
-	readonly property int fontSize: contentSize
+    readonly property int widgetPadding: 2
+    readonly property int widgetChildrenPadding: 5
+    readonly property int widgetContentMargin: 2
+    readonly property int widgetMargin: 2
 
+    //bar sizes
+    readonly property int barHeight: barChildrenSize + widgetPadding * 2
+    readonly property int barChildrenSize: barContentSize + widgetContentMargin * 2 + widgetChildrenPadding * 2
+    readonly property int barContentSize: 18
+
+    //start menu
+    readonly property int startMenuContentSize: 36
 }

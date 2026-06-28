@@ -1,8 +1,10 @@
 import QtQuick
 import qs.Components
+import qs.Style
 
 CustomText {
     id: text
+    fontSize: Style.barContentSize
     content: Qt.formatDateTime(new Date(), "ddd, MMM dd - HH:mm")
     Timer {
         interval: 1000
