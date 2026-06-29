@@ -19,10 +19,11 @@ Singleton
     readonly property int widgetMargin: 2
 
     //bar sizes
-    readonly property int barHeight: barChildrenSize + widgetPadding * 2
+    readonly property int barHeight: barChildrenSize + widgetPadding * 2 + widgetMargin * 2
     readonly property int barChildrenSize: barContentSize + widgetContentMargin * 2 + widgetChildrenPadding * 2
     readonly property int barContentSize: 18
 
     //start menu
     readonly property int startMenuContentSize: 36
+    readonly property int startMenuContentSize_variant: 20
 }

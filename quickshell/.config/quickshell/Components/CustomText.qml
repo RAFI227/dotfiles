@@ -8,7 +8,7 @@ Item {
     property alias color: text.color
     property alias fontSize: text.font.pixelSize
     implicitHeight: fontSize
-    implicitWidth: Math.ceil(text.implicitWidth) > Style.barContentSize ? Math.ceil(text.implicitWidth) : Style.barContentSize
+    implicitWidth: Math.ceil(text.implicitWidth) > fontSize ? Math.ceil(text.implicitWidth) : fontSize
 
     Text {
         id: text

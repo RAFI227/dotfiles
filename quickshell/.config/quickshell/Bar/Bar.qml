@@ -19,18 +19,21 @@ PanelWindow {
         leftSided: true
     }
     RowLayout {
+        anchors.margins: Style.widgetPadding
         spacing: Style.spacing
-        anchors.margins: Style.barMargin
         anchors.fill: parent
 
         ChildRectangle {
             implicitHeight: Style.barChildrenSize
-            Workspaces {}
+            Workspaces {
+                anchors.centerIn: parent
+            }
         }
 
         ChildRectangle {
             implicitHeight: Style.barChildrenSize
             CustomText {
+                anchors.centerIn: parent
                 fontSize: Style.barContentSize
                 content: "сикс севен"
             }
@@ -43,7 +46,9 @@ PanelWindow {
         ChildRectangle {
             implicitHeight: Style.barChildrenSize
             Layout.alignment: Qt.AlignVCenter
-            Clock {}
+            Clock {
+                anchors.centerIn: parent
+            }
         }
 
         Item {
@@ -55,18 +60,22 @@ PanelWindow {
             visible: tray.length > 0
             SystemTray {
                 id: tray
+                anchors.centerIn: parent
                 bar: bar
             }
         }
 
         ChildRectangle {
             implicitHeight: Style.barChildrenSize
-            child: Battery {}
+            Battery {
+                anchors.centerIn: parent
+            }
         }
 
         ChildRectangle {
             implicitHeight: Style.barChildrenSize
             CustomButton {
+                anchors.centerIn: parent
                 CustomText {
                     fontSize: Style.barContentSize
                     anchors.centerIn: parent

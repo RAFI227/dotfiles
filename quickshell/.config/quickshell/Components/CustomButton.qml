@@ -2,22 +2,21 @@ import Quickshell.Io
 import QtQuick
 import qs.Style
 
-Rectangle {
+ChildRectangle {
     id: root
 
-    default property alias content: container.data
     property alias script: scriptProcess
+    property bool pressed: false
     property var userCommand: ""
-    color: mouseArea.containsMouse ? Colors.surface_bright : "transparent"
-    implicitWidth: container.childrenRect.width + Style.widgetContentMargin * 2
-    implicitHeight: container.childrenRect.height + Style.widgetContentMargin * 2
+    property var inactiveColor: "transparent"
+    property var hoverColor: Colors.surface_bright
+    property var activeColor: Colors.primary_fixed_dim
+    color: pressed ? activeColor : (mouseArea.containsMouse ? hoverColor : inactiveColor)
     radius: Style.borderRadius
     signal clicked(var mouse)
-
-    Item {
-        id: container
-        anchors.fill: parent
-    }
+    border.width: 0
+    margin: Style.widgetContentMargin
+    padding: Style.widgetChildrenPadding
 
     MouseArea {
         id: mouseArea
@@ -26,9 +25,9 @@ Rectangle {
         acceptedButtons: Qt.LeftButton | Qt.RightButton
         hoverEnabled: true
 
-        onClicked: mouse => {
-            root.clicked(mouse);
-        }
+        onPressed: root.pressed = true
+        onReleased: root.pressed = false
+        onClicked: mouse => root.clicked(mouse)
     }
 
     Process {
